@@ -1,0 +1,16 @@
+import { BankEntry, ComplianceSnapshot, PoolMemberResult, Route } from '../../../core/domain/types.js';
+
+const seededRoutes: Route[] = [
+  { id: '1', routeId: 'R001', shipId: 'S001', vesselType: 'Container', fuelType: 'HFO', year: 2024, ghgIntensity: 91.0, fuelConsumption: 5000, distance: 12000, totalEmissions: 4500, isBaseline: true },
+  { id: '2', routeId: 'R002', shipId: 'S002', vesselType: 'BulkCarrier', fuelType: 'LNG', year: 2024, ghgIntensity: 88.0, fuelConsumption: 4800, distance: 11500, totalEmissions: 4200, isBaseline: false },
+  { id: '3', routeId: 'R003', shipId: 'S003', vesselType: 'Tanker', fuelType: 'MGO', year: 2024, ghgIntensity: 93.5, fuelConsumption: 5100, distance: 12500, totalEmissions: 4700, isBaseline: false },
+  { id: '4', routeId: 'R004', shipId: 'S004', vesselType: 'RoRo', fuelType: 'HFO', year: 2025, ghgIntensity: 89.2, fuelConsumption: 4900, distance: 11800, totalEmissions: 4300, isBaseline: false },
+  { id: '5', routeId: 'R005', shipId: 'S005', vesselType: 'Container', fuelType: 'LNG', year: 2025, ghgIntensity: 90.5, fuelConsumption: 4950, distance: 11900, totalEmissions: 4400, isBaseline: false },
+];
+
+export const inMemoryDb = {
+  routes: [...seededRoutes],
+  snapshots: [] as ComplianceSnapshot[],
+  bankEntries: [] as BankEntry[],
+  pools: [] as { poolId: string; year: number; members: PoolMemberResult[] }[],
+};
